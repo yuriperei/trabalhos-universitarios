@@ -1,0 +1,4 @@
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\bin\Debug\MustDo.Infra.CrossCutting.SecurityIdentity.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\bin\Debug\MustDo.Infra.CrossCutting.SecurityIdentity.pdb
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\obj\Debug\MustDo.Infra.CrossCutting.SecurityIdentity.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\obj\Debug\MustDo.Infra.CrossCutting.SecurityIdentity.pdb
