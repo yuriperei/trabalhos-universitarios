@@ -1,6 +1,7 @@
 ﻿using MustDo.Domain.Entities;
 using MustDo.Domain.Interfaces.Repositories;
 using MustDo.Domain.Interfaces.Services;
+using System.Collections.Generic;
 
 namespace MustDo.Domain.Services
 {
@@ -16,5 +17,16 @@ namespace MustDo.Domain.Services
 		{
 			_tarefaRepository.FinalizarTarefasAtrasadas();
 		}
-	}
+
+        IEnumerable<Tarefa> ITarefaService.ObterTarefasPorCategoria(int id)
+        {
+           return _tarefaRepository.ObterTarefasPorCategoria(id);
+        }
+
+        //IEnumerable<Tarefa> ITarefaService.ObterTarefasPorTag(int id)
+        //{
+        //    return _tarefaRepository.ObterTarefasPorTag(id);
+        //}
+
+    }
 }

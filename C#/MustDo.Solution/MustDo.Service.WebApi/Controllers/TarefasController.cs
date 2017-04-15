@@ -18,10 +18,12 @@ namespace MustDo.Service.WebApi.Controllers
     public class TarefasController : ApiController
     {
         private readonly ITarefaService _tarefaService;
+        private readonly ITagService _tagServie;
 
-        public TarefasController(ITarefaService tarefaService)
+        public TarefasController(ITarefaService tarefaService, ITagService tagServie)
         {
             _tarefaService = tarefaService;
+            _tagServie = tagServie;
         }
 
         // GET: api/Tarefas
@@ -30,6 +32,31 @@ namespace MustDo.Service.WebApi.Controllers
             var tarefaDomain = _tarefaService.ObterTodos();
             var tarefaDTO = AutoMapper.Mapper.Map<IEnumerable<Tarefa>, IEnumerable<TarefaDTO>>(tarefaDomain);
             return tarefaDTO;
+        }
+
+        // GET: api/Tarefas/PorCategoria/{id}
+        [HttpGet]
+        public IEnumerable<TarefaDTO> PorCategoria(int id)
+        {
+            var tarefaDomain = _tarefaService.ObterTarefasPorCategoria(id);
+            if (tarefaDomain != null)
+            {
+                return AutoMapper.Mapper.Map<IEnumerable<Tarefa>, IEnumerable<TarefaDTO>>(tarefaDomain);
+            }         
+            return null;
+        }
+
+        // GET: api/Tarefas/PorTag/{id}
+        [HttpGet]
+        public IEnumerable<TarefaDTO> PorTag(int id)
+        {
+            var tag = _tagServie.ObterPorId(id);
+            if (tag != null)
+            {
+                IEnumerable<Tarefa> tarefas = tag.Tarefas;
+                return AutoMapper.Mapper.Map<IEnumerable<Tarefa>, IEnumerable<TarefaDTO>>(tarefas);
+            }
+            return null;
         }
 
         // GET: api/Tarefas/5
