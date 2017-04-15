@@ -1,0 +1,79 @@
+﻿@*@model IEnumerable<MustDo.Consumo.WebApi.WebMvc.Models.Tarefa>*@
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/appCategoria")
+}
+
+<div class="page-header">
+    <h1>LISTA DE TAREFAS</h1>
+    <h5>LISTAR POR CATEGORIA</h5>
+</div>
+
+<div class="row">
+
+
+    <div class="col-md-12">
+        <!-- TODO: Add new book -->
+    <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+
+        <form class="form-horizontal col-sm-6" data-bind="submit: obterTarefasPorCategoria">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <select class="selectpicker" required data-bind="options:categorias, optionsText: 'Nome', value: categoriaSeleted.Categoria" title="Escolha uma categoria..." data-live-search="true"></select>
+                    <button type="submit" class="btn btn-default">Listar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-12" style="margin-top:25px;">
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Descrição
+                    </th>
+                    <th>
+                        Situação
+                    </th>
+                    <th>
+                        Data de Criação
+                    </th>
+                    <th>
+                        Data de Finalização
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: tarefas">
+
+                <tr>
+                    <td>
+                        <span data-bind="text: Nome" />
+                    </td>
+                    <td>
+                        <span data-bind="text: Descricao" />
+                    </td>
+                    <td>
+                        <span data-bind="text: Situacao" />
+                    </td>
+                    <td>
+                        <span data-bind="text: DataCriacao" />
+                    </td>
+                    <td>
+                        <span data-bind="text: DataFinalizacao"> às </span><span data-bind="text: HoraFinalizacao" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+</div>

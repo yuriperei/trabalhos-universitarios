@@ -61,3 +61,6 @@ C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.S
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\obj\Debug\MustDo.Service.WebApi.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\obj\Debug\MustDo.Service.WebApi.pdb
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\WebActivatorEx.dll
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Cors.dll
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.Cors.dll
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.Cors.xml
