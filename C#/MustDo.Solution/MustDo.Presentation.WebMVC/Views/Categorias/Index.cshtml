@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MustDo.Domain.Entities.Categoria>
+﻿@model IEnumerable<MustDo.Presentation.WebMVC.Models.CategoriaViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -14,6 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
         <th></th>
     </tr>
 
@@ -21,6 +24,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CategoriaId }) |

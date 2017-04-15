@@ -4,5 +4,6 @@ namespace MustDo.Domain.Interfaces.Repositories
 {
 	public interface ITarefaRepository : IRepositoryBase<Tarefa>
 	{
+		void FinalizarTarefasAtrasadas();
 	}
 }

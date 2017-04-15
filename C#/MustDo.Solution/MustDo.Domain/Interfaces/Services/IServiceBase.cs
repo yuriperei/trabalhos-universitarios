@@ -7,7 +7,7 @@ namespace MustDo.Domain.Interfaces.Services
 	{
 		IEnumerable<T> ObterTodos();
 
-		T ObterPorId(Guid? id);
+		T ObterPorId(int? id);
 
 		void Adicionar(T entity);
 
@@ -15,6 +15,6 @@ namespace MustDo.Domain.Interfaces.Services
 
 		void Remover(T entity);
 
-		void Remover(Guid? id);
+		void Remover(int? id);
 	}
 }

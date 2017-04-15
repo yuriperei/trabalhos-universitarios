@@ -29,7 +29,7 @@ namespace MustDo.Infra.Data.Repositories
 		}
 
 
-		public T ObterPorId(Guid? id)
+		public T ObterPorId(int? id)
 		{
 			return _db.Set<T>().Find(id);
 		}
@@ -39,7 +39,7 @@ namespace MustDo.Infra.Data.Repositories
 			return _db.Set<T>().ToList();
 		}
 
-		public void Remover(Guid? id)
+		public virtual void Remover(int? id)
 		{
 			var entity = ObterPorId(id);
 			Remover(entity);

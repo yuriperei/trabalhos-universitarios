@@ -12,6 +12,7 @@ namespace MustDo.Infra.Data.Mappings
 			HasKey(p => p.CategoriaId);
 
 			Property(p => p.Nome).IsRequired().HasMaxLength(50);
+
 		}
 	}
 }

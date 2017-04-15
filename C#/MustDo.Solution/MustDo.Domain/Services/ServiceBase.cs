@@ -24,7 +24,7 @@ namespace MustDo.Domain.Services
 			_repositoryBase.Alterar(entity);
 		}
 
-		public T ObterPorId(Guid? id)
+		public T ObterPorId(int? id)
 		{
 			return _repositoryBase.ObterPorId(id);
 		}
@@ -34,7 +34,7 @@ namespace MustDo.Domain.Services
 			return _repositoryBase.ObterTodos();
 		}
 
-		public void Remover(Guid? id)
+		public void Remover(int? id)
 		{
 			_repositoryBase.Remover(id);
 		}

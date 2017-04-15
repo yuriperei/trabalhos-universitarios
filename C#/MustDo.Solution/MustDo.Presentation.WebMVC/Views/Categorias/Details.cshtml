@@ -1,4 +1,4 @@
-﻿@model MustDo.Domain.Entities.Categoria
+﻿@model MustDo.Presentation.WebMVC.Models.CategoriaViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -16,6 +16,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
         </dd>
 
     </dl>

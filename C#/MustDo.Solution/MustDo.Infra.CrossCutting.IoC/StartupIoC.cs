@@ -13,15 +13,15 @@ namespace MustDo.Infra.CrossCutting.IoC
 		{
 			// Domain
 			container.Register<ICategoriaService, CategoriaService>(Lifestyle.Scoped);
-			container.Register<IComentarioService, ComentarioService>(Lifestyle.Scoped);
 			container.Register<ITarefaService, TarefaService>(Lifestyle.Scoped);
+			container.Register<ITagService, TagService>(Lifestyle.Scoped);
 			container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
 
 
 			// Infra.Data -> Repositories
 			container.Register<ICategoriaRepository, CategoriaRepository>(Lifestyle.Scoped);
-			container.Register<IComentarioRepository, ComentarioRepository>(Lifestyle.Scoped);
 			container.Register<ITarefaRepository, TarefaRepository>(Lifestyle.Scoped);
+			container.Register<ITagRepository, TagRepository>(Lifestyle.Scoped);
 			container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>), Lifestyle.Scoped);
 
 			container.Register<MustDo4EntitiesDb, MustDo4EntitiesDb>(Lifestyle.Scoped);

@@ -4,5 +4,6 @@ namespace MustDo.Domain.Interfaces.Services
 {
 	public interface ITarefaService : IServiceBase<Tarefa>
 	{
+		void FinalizarTarefasAtrasadas();
 	}
 }
