@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{54ED0ADB-FF94-4C66-A20A-84CFFAFD18D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Service", "2-Service", "{6D6E7246-B923-44D0-BB81-302D6C20EB0D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Application", "3-Application", "{BAAB7250-A5EA-40FC-80DB-5426484A8FF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Domain", "4-Domain", "{695F2C9C-677B-45E9-9D1E-9093A431B3BC}"
 EndProject
@@ -30,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MustDo.Infra.CrossCutting.IoC", "MustDo.Infra.CrossCutting.IoC\MustDo.Infra.CrossCutting.IoC.csproj", "{B6A8E936-EDBD-45D7-8B07-284BC49E518C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MustDo.Infra.CrossCutting.SecurityIdentity", "MustDo.Infra.CrossCutting.SecurityIdentity\MustDo.Infra.CrossCutting.SecurityIdentity.csproj", "{D2A16E0A-D179-4BA8-9FBF-F0F391EFEF03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MustDo.Service.WebApi", "MustDo.Service.WebApi\MustDo.Service.WebApi.csproj", "{35016E63-BC9A-44D9-A4D4-A6F360B6061D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +57,10 @@ Global
 		{D2A16E0A-D179-4BA8-9FBF-F0F391EFEF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2A16E0A-D179-4BA8-9FBF-F0F391EFEF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2A16E0A-D179-4BA8-9FBF-F0F391EFEF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35016E63-BC9A-44D9-A4D4-A6F360B6061D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35016E63-BC9A-44D9-A4D4-A6F360B6061D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35016E63-BC9A-44D9-A4D4-A6F360B6061D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35016E63-BC9A-44D9-A4D4-A6F360B6061D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +75,6 @@ Global
 		{22C4A259-0128-4633-BBFA-217AC7282161} = {7A6479A1-33DD-48B4-A013-F5BD100C5CEB}
 		{B6A8E936-EDBD-45D7-8B07-284BC49E518C} = {3FE8272C-270B-4023-B03F-6EB469F26597}
 		{D2A16E0A-D179-4BA8-9FBF-F0F391EFEF03} = {193A623C-A982-41A2-A26B-14DBC9DC2111}
+		{35016E63-BC9A-44D9-A4D4-A6F360B6061D} = {6D6E7246-B923-44D0-BB81-302D6C20EB0D}
 	EndGlobalSection
 EndGlobal

@@ -16,33 +16,33 @@ namespace MustDo.Infra.Data.Contexts
 		public DbSet<Tarefa> Tarefas { get; set; }
 		public DbSet<Tag> Tags { get; set; }
 
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
-		{
-			base.OnModelCreating(modelBuilder);
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
-			// Conventions
-			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-			modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-			modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            // Conventions
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-			// General Custom Context Properties
-			//modelBuilder.Properties()
-			//    .Configure(p => p.HasDatabaseGeneratedOption
-			//    (DatabaseGeneratedOption.None));
+            // General Custom Context Properties
+            //modelBuilder.Properties()
+            //    .Configure(p => p.HasDatabaseGeneratedOption
+            //    (DatabaseGeneratedOption.None));
 
-			modelBuilder.Properties<string>()
-			    .Configure(p => p.HasColumnType("varchar"));
+            modelBuilder.Properties<string>()
+                .Configure(p => p.HasColumnType("varchar"));
 
 
-			AddConfigMap(modelBuilder);
-		}
+            AddConfigMap(modelBuilder);
+        }
 
-		private void AddConfigMap(DbModelBuilder modelBuilder)
-		{
-			modelBuilder.Configurations.Add(new CategoriaMap());
-			modelBuilder.Configurations.Add(new TarefaMap());
-			modelBuilder.Configurations.Add(new TagMap());
-		}
+        private void AddConfigMap(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new CategoriaMap());
+            modelBuilder.Configurations.Add(new TarefaMap());
+            modelBuilder.Configurations.Add(new TagMap());
+        }
 
-	}
+    }
 }
