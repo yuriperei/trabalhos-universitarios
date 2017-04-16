@@ -15,10 +15,11 @@
 
     <section class="hbox stretch">
         <!-- .aside -->
-        <aside class="bg-dark aside-md" id="nav">
+        <aside class="bg-dark aside-md" id="nav" style="width:300px">
             <section class="vbox">
-                <header class="nav-bar dker"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body"> <i class="icon-reorder"></i> </a> <a href="#" class="nav-brand" data-toggle="fullscreen">todo</a> <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i class="icon-comment-alt"></i> </a> </header>
-                <section>
+                @*<header class="nav-bar dker"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body"> <i class="icon-reorder"></i> </a> <img class="nav-brand" src="~/Content/img/logo.png" /> <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i class="icon-comment-alt"></i> </a> </header>*@
+                <header class="nav-bar dker" style="padding:8px 8px 8px 15px;"><img src="~/Content/img/logo.png" /></header>
+                <section style="margin-top:25px;">
 
                     @if (Request.IsAuthenticated)
                     {
@@ -29,7 +30,7 @@
                             <div class="lt nav-user hidden-xs pos-rlt">
                                 <div class="nav-avatar pos-rlt">
                                     <span class="caret caret-white"></span>
-                                    <a href="#" class="thumb-sm animated rollIn" data-toggle="dropdown">
+                                    <a href="#" class="thumb-sm" data-toggle="dropdown" style="padding:8px 5px 8px 4px;">
                                         @User.Identity.GetUserName()
                                     </a>
                                     <ul class="dropdown-menu m-t-sm animated fadeInLeft">
@@ -53,8 +54,8 @@
                     {
                         <nav class="nav-primary hidden-xs">
                             <ul class="nav">
-                                <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                                <li>@Html.ActionLink("Registrar", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li>@Html.ActionLink("Acessar", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                             </ul>
                         </nav>
                     }

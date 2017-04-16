@@ -6,16 +6,11 @@
 
 <h2>Index</h2>
 
-<table class="table">
-    <tr>
-        <td>
-            @Html.ActionLink("Nova tarefa", "Create", new { @class = "btn btn-primary btn-lg" })
-        </td>
-        <td>
-            @Html.ActionLink("Finalizar Tarefas Atrasadas", "FinalizarTarefasAtrasadas", new { @class = "btn btn-primary btn-lg" })
-        </td>
-    </tr>
-</table>
+<ul class="nav nav-pills">
+    <li role="presentation" class="active">@Html.ActionLink("Nova tarefa", "Create")</li>
+    <li role="presentation" class="active">@Html.ActionLink("Finalizar Tarefas Atrasadas", "FinalizarTarefasAtrasadas")</li>
+</ul>
+<br/>
 <table class="table">
     <tr>
         <th>
