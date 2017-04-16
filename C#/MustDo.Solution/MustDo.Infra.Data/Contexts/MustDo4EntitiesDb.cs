@@ -15,6 +15,7 @@ namespace MustDo.Infra.Data.Contexts
 		public DbSet<Categoria> Categorias { get; set; }
 		public DbSet<Tarefa> Tarefas { get; set; }
 		public DbSet<Tag> Tags { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,6 +43,7 @@ namespace MustDo.Infra.Data.Contexts
             modelBuilder.Configurations.Add(new CategoriaMap());
             modelBuilder.Configurations.Add(new TarefaMap());
             modelBuilder.Configurations.Add(new TagMap());
+            modelBuilder.Configurations.Add(new UsuarioMap());
         }
 
     }

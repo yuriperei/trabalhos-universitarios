@@ -42,23 +42,6 @@ namespace MustDo.Infra.Data.Repositories
             return tarefas;
         }
 
-        //IEnumerable<Tarefa> ITarefaRepository.ObterTarefasPorTag(int id)
-        //{
-        //    //base.ObterTodos().Where(m => m.Tags.Contains(id).ToList());
-
-        //    var tags = (from tag in _db.Set<Tag>()
-        //               where tag.TagId == id
-        //                select tag);
-
-        //    (from tarefa in _db.Tarefas
-        //     join tag in _db.Tags
-        //     on tarefa.Tags.Contains(id)
-             
-          
-
-        //    return tarefas;
-        //}
-
         public override void Remover(int? id)
         {
             var entity = ObterPorId(id);

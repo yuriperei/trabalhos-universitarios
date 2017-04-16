@@ -31,7 +31,8 @@ C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.I
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Debug\EntityFramework.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.csprojResolveAssemblyReference.cache
-C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.dll
-C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.pdb
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.Migrations.StartDb.resources
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.csproj.GenerateResource.Cache
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.dll
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.pdb
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Debug\MustDo.Infra.Data.Migrations._001.resources

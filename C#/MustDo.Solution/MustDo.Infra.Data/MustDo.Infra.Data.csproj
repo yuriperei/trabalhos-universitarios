@@ -46,9 +46,14 @@
     <Compile Include="Mappings\CategoriaMap.cs" />
     <Compile Include="Mappings\TagMap.cs" />
     <Compile Include="Mappings\TarefaMap.cs" />
+    <Compile Include="Mappings\UsuarioMap.cs" />
     <Compile Include="Migrations\201704150536014_StartDb.cs" />
     <Compile Include="Migrations\201704150536014_StartDb.Designer.cs">
       <DependentUpon>201704150536014_StartDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704152324197_001.cs" />
+    <Compile Include="Migrations\201704152324197_001.Designer.cs">
+      <DependentUpon>201704152324197_001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,6 +61,7 @@
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\TagRepository.cs" />
     <Compile Include="Repositories\TarefaRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704150536014_StartDb.resx">
       <DependentUpon>201704150536014_StartDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704152324197_001.resx">
+      <DependentUpon>201704152324197_001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

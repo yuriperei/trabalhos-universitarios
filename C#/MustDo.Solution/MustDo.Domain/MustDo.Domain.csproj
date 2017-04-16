@@ -36,11 +36,13 @@
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Tarefa.cs" />
+    <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Enum\SituacaoTarefaEnum.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Repositories\ITagRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITarefaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
     <Compile Include="Interfaces\Services\ICategoriaService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
     <Compile Include="Interfaces\Services\ITagService.cs" />

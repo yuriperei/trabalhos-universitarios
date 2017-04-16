@@ -1,3 +1,4 @@
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\obj\Debug\MustDo.Service.WebApi.csprojResolveAssemblyReference.cache
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\roslyn\csc.exe
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -26,7 +27,9 @@ C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.S
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\SimpleInjector.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\SimpleInjector.Integration.WebApi.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Net.Http.Formatting.dll
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Cors.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Helpers.dll
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.Cors.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.WebHost.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Mvc.dll
@@ -35,6 +38,7 @@ C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.S
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.WebPages.Deployment.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.WebPages.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.WebPages.Razor.dll
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\WebActivatorEx.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\WebGrease.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\MustDo.Domain.pdb
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\MustDo.Infra.CrossCutting.IoC.pdb
@@ -45,6 +49,7 @@ C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.S
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\SimpleInjector.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\SimpleInjector.Integration.WebApi.xml
+C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.Cors.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\Newtonsoft.Json.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Net.Http.Formatting.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Helpers.xml
@@ -57,10 +62,5 @@ C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.S
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.WebPages.Deployment.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.WebPages.Razor.xml
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\Antlr3.Runtime.pdb
-C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\obj\Debug\MustDo.Service.WebApi.csprojResolveAssemblyReference.cache
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\obj\Debug\MustDo.Service.WebApi.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\obj\Debug\MustDo.Service.WebApi.pdb
-C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\WebActivatorEx.dll
-C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Cors.dll
-C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.Cors.dll
-C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Service.WebApi\bin\System.Web.Http.Cors.xml

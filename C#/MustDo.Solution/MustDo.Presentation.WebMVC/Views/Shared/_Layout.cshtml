@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,31 +19,43 @@
             <section class="vbox">
                 <header class="nav-bar dker"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body"> <i class="icon-reorder"></i> </a> <a href="#" class="nav-brand" data-toggle="fullscreen">todo</a> <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i class="icon-comment-alt"></i> </a> </header>
                 <section>
-                    <div class="lt nav-user hidden-xs pos-rlt">
-                        <div class="nav-avatar pos-rlt">
-                            <a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown"> <img src="images/avatar.jpg" alt="" class=""> <span class="caret caret-white"></span> </a>
-                            <ul class="dropdown-menu m-t-sm animated fadeInLeft">
-                                <span class="arrow top"></span>
-                                <li> <a href="#">Settings</a> </li>
-                                <li> <a href="profile.html">Profile</a> </li>
-                                <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
-                                <li class="divider"></li>
-                                <li> <a href="docs.html">Help</a> </li>
-                                <li> <a href="signin.html">Logout</a> </li>
-                            </ul>
-                            <div class="visible-xs m-t m-b">
-                                <a href="#" class="h3">John.Smith</a>
-                                <p><i class="icon-map-marker"></i> London, UK</p>
-                            </div>
+
+                    @if (Request.IsAuthenticated)
+                    {
+
+                        <div class="lt nav-user hidden-xs pos-rlt">
+                            <div class="nav-avatar pos-rlt">
+                                    <span class="caret caret-white"></span>
+                                    <a href="#" class="thumb-sm animated rollIn" data-toggle="dropdown">
+                                        @User.Identity.GetUserName()
+                                    </a>
+                                    <ul class="dropdown-menu m-t-sm animated fadeInLeft">
+                                        <span class="arrow top"></span>
+                                        <li> @Html.ActionLink("Perfil", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                                        <li class="divider"></li>
+                                        <li> <a href="javascript:document.getElementById('logoutForm').submit()">Desconectar</a> </li>
+                                    </ul>
+                                </div>
                         </div>
-                    </div>
-                    <nav class="nav-primary hidden-xs">
-                        <ul class="nav">
-                            <li> @Html.ActionLink("Tarefas", "Index", "Tarefas")</li>
-                            <li> @Html.ActionLink("Categorias", "Index", "Categorias")</li>
-                            <li> @Html.ActionLink("Tags", "Index", "Tags")</li>
-                        </ul>
-                    </nav>
+                        <nav class="nav-primary hidden-xs">
+                            <ul class="nav">
+                                <li> @Html.ActionLink("Tarefas", "Index", "Tarefas")</li>
+                                <li> @Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                                <li> @Html.ActionLink("Tags", "Index", "Tags")</li>
+                            </ul>
+                        </nav>
+                    }
+                    else
+                    {
+                        <nav class="nav-primary hidden-xs">
+                            <ul class="nav">
+                                <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            </ul>
+                        </nav>
+                    }
+
+                    
                 </section>
             </section>
         </aside>

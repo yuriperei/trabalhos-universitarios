@@ -1,9 +1,16 @@
-﻿using MustDo.Infra.CrossCutting.IoC;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin;
+using MustDo.Infra.CrossCutting.IoC;
+using MustDo.Infra.CrossCutting.SecurityIdentity.Configurations;
+using MustDo.Infra.CrossCutting.SecurityIdentity.Contexts;
+using MustDo.Infra.CrossCutting.SecurityIdentity.Models;
 using MustDo.Presentation.WebMVC.App_Start;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
 using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using WebActivatorEx;
 
@@ -22,7 +29,19 @@ namespace MustDo.Presentation.WebMVC.App_Start
 
 			InitializeContainer(container);
 
-			container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
+            // Necessário para registrar o ambiente do Owin que é dependência do Identity
+            // Feito fora da camada de IoC para não levar o System.Web para fora
+            container.Register(() =>
+            {
+                if (HttpContext.Current != null && HttpContext.Current.Items["owin.Environment"] == null && container.IsVerifying)
+                {
+                    return new OwinContext().Authentication;
+                }
+                return HttpContext.Current.GetOwinContext().Authentication;
+
+            }, Lifestyle.Scoped);
+
+            container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
 			container.Verify();
 
@@ -32,6 +51,12 @@ namespace MustDo.Presentation.WebMVC.App_Start
 		private static void InitializeContainer(Container container)
 		{
 			StartupIoC.RegisterIoC(container);
-		}
+
+            // Identity
+            container.Register<ApplicationDbContext>(Lifestyle.Scoped);
+            container.Register<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(new ApplicationDbContext()), Lifestyle.Scoped);
+            container.Register<ApplicationUserManager>(Lifestyle.Scoped);
+            container.Register<ApplicationSignInManager>(Lifestyle.Scoped);
+        }
 	}
 }

@@ -29,7 +29,7 @@ namespace MustDo.Infra.Data.Repositories
 		}
 
 
-		public T ObterPorId(int? id)
+		public virtual T ObterPorId(int? id)
 		{
 			return _db.Set<T>().Find(id);
 		}
