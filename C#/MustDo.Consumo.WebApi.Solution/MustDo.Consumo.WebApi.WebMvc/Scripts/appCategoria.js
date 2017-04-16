@@ -8,7 +8,7 @@
     self.error = ko.observable();
 
     var baseUri = 'http://localhost:63445';
-    var tarefasPorCategoriaUri = baseUri + '/api/Tarefas/PorCategoria/';
+    var tarefasPorCategoriaUri = baseUri + '/api/TarefasPorCategoria/';
     var categoriasUri = baseUri + '/api/Categorias/';
 
     function ajaxHelper(uri, method, data) {

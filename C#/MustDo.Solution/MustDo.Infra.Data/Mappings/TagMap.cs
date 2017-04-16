@@ -10,20 +10,7 @@ namespace MustDo.Infra.Data.Mappings
 			ToTable("Tags");
 
 			HasKey(p => p.TagId);
-
-
 			Property(p => p.Nome).IsRequired().HasMaxLength(50);
-			//HasMany(p => (List<Tarefa>)p.Tarefas)
-			//.WithMany();
-
-			//HasMany(u => (List<Tarefa>)u.Tarefas)
-			//.WithMany();
-			// .Map(m =>
-			// {
-			//	 m.MapLeftKey("TarefaId");
-			//	 m.MapRightKey("TagId");
-			//	 m.ToTable("TagTarefa");
-			// });
 		}
 	}
 }

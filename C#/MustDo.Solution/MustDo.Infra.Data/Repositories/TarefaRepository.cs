@@ -23,7 +23,8 @@ namespace MustDo.Infra.Data.Repositories
 		{
 			var tarefasAtrasadas = _db.Set<Tarefa>().ToList().Where(
 				f => f.Situacao == SituacaoTarefaEnum.Progresso
-				&& DateTime.Compare(f.DataFinalizacao, DateTime.Now) <= 0);
+				&& DateTime.Compare(f.DataFinalizacao, DateTime.Now) <= 0
+                && f.UsuarioId == _usuarioId);
 			tarefasAtrasadas.ToList().ForEach(f =>
 			{
 				f.Situacao = SituacaoTarefaEnum.Atrasada;
@@ -40,6 +41,16 @@ namespace MustDo.Infra.Data.Repositories
              select tarefa).Distinct().ToList();
 
             return tarefas;
+        }
+
+        public override IEnumerable<Tarefa> ObterTodos()
+        {
+            //Serviço
+            if(_usuarioId != null && !_usuarioId.Equals(""))
+            {
+                return base.ObterTodos().Where(m => m.UsuarioId.Equals(_usuarioId));
+            }
+            return base.ObterTodos();
         }
 
         public override void Remover(int? id)

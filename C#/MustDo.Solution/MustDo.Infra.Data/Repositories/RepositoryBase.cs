@@ -10,6 +10,7 @@ namespace MustDo.Infra.Data.Repositories
 	public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 	{
 		private readonly MustDo4EntitiesDb _db;
+        protected string _usuarioId;
 
 		public RepositoryBase(MustDo4EntitiesDb db)
 		{
@@ -28,13 +29,17 @@ namespace MustDo.Infra.Data.Repositories
 			_db.SaveChanges();
 		}
 
+        public void ObterIdUsuario(string id)
+        {
+            _usuarioId = id;
+        }
 
-		public virtual T ObterPorId(int? id)
+        public virtual T ObterPorId(int? id)
 		{
 			return _db.Set<T>().Find(id);
 		}
 
-		public IEnumerable<T> ObterTodos()
+		public virtual IEnumerable<T> ObterTodos()
 		{
 			return _db.Set<T>().ToList();
 		}

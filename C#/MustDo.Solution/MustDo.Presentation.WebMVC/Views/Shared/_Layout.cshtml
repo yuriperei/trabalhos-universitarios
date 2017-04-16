@@ -22,9 +22,12 @@
 
                     @if (Request.IsAuthenticated)
                     {
-
-                        <div class="lt nav-user hidden-xs pos-rlt">
-                            <div class="nav-avatar pos-rlt">
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+                        }
+                            <div class="lt nav-user hidden-xs pos-rlt">
+                                <div class="nav-avatar pos-rlt">
                                     <span class="caret caret-white"></span>
                                     <a href="#" class="thumb-sm animated rollIn" data-toggle="dropdown">
                                         @User.Identity.GetUserName()
@@ -36,14 +39,15 @@
                                         <li> <a href="javascript:document.getElementById('logoutForm').submit()">Desconectar</a> </li>
                                     </ul>
                                 </div>
-                        </div>
-                        <nav class="nav-primary hidden-xs">
-                            <ul class="nav">
-                                <li> @Html.ActionLink("Tarefas", "Index", "Tarefas")</li>
-                                <li> @Html.ActionLink("Categorias", "Index", "Categorias")</li>
-                                <li> @Html.ActionLink("Tags", "Index", "Tags")</li>
-                            </ul>
-                        </nav>
+                            </div>
+                            <nav class="nav-primary hidden-xs">
+                                <ul class="nav">
+                                    <li> @Html.ActionLink("Tarefas", "Index", "Tarefas")</li>
+                                    <li> @Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                                    <li> @Html.ActionLink("Tags", "Index", "Tags")</li>
+                                </ul>
+                            </nav>
+                        
                     }
                     else
                     {
@@ -55,7 +59,7 @@
                         </nav>
                     }
 
-                    
+
                 </section>
             </section>
         </aside>
@@ -77,7 +81,6 @@
         </section>
     </section>
     <!-- /.vbox -->
-
     @*@Scripts.Render("~/bundles/jquery")*@
     @*@Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)

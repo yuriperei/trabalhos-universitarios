@@ -7,6 +7,7 @@ namespace MustDo.Domain.Entities
 	{
 		public int TagId { get; set; }
 		public string Nome { get; set; }
-		public virtual ICollection<Tarefa> Tarefas { get; set; }
+        public string UsuarioId { get; set; }
+        public virtual ICollection<Tarefa> Tarefas { get; set; }
 	}
 }

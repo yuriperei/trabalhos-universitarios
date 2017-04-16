@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MustDo.Domain.Entities;
+using MustDo.Domain.ENUM;
 using MustDo.Service.WebApi.Models;
 using System;
 
@@ -23,9 +24,10 @@ namespace MustDo.Service.WebApi.App_Start
 				.ForMember(dest => dest.DataFinalizacao, opt => opt.MapFrom(src =>
 				src.DataFinalizacao)
 				).ForMember(dest => dest.HoraFinalizacao, opt => opt.MapFrom(src =>
-				src.DataFinalizacao));
+				src.DataFinalizacao)
+                ).ForMember(dest => dest.SituacaoDescricao, opt => opt.MapFrom(src => Enum.GetName(typeof(SituacaoTarefaEnum), src.Situacao)));
 
-				config.CreateMap<TarefaDTO, Tarefa>()
+                config.CreateMap<TarefaDTO, Tarefa>()
 				.ForMember(dest => dest.DataFinalizacao, opt => opt.MapFrom(src =>
 				new DateTime(src.DataFinalizacao.Year,
 						src.DataFinalizacao.Month,

@@ -3,7 +3,7 @@ namespace MustDo.Infra.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class StartDb : DbMigration
+    public partial class StarDb : DbMigration
     {
         public override void Up()
         {
@@ -14,6 +14,7 @@ namespace MustDo.Infra.Data.Migrations
                         CategoriaId = c.Int(nullable: false, identity: true),
                         Nome = c.String(nullable: false, maxLength: 50, unicode: false),
                         Descricao = c.String(maxLength: 8000, unicode: false),
+                        UsuarioId = c.String(maxLength: 8000, unicode: false),
                     })
                 .PrimaryKey(t => t.CategoriaId);
             
@@ -27,6 +28,7 @@ namespace MustDo.Infra.Data.Migrations
                         Situacao = c.Int(nullable: false),
                         DataCriacao = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         DataFinalizacao = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        UsuarioId = c.String(maxLength: 8000, unicode: false),
                         CategoriaId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.TarefaId)
@@ -39,8 +41,28 @@ namespace MustDo.Infra.Data.Migrations
                     {
                         TagId = c.Int(nullable: false, identity: true),
                         Nome = c.String(nullable: false, maxLength: 50, unicode: false),
+                        UsuarioId = c.String(maxLength: 8000, unicode: false),
                     })
                 .PrimaryKey(t => t.TagId);
+            
+            CreateTable(
+                "dbo.AspNetUsers",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128, unicode: false),
+                        Email = c.String(nullable: false, maxLength: 256, unicode: false),
+                        EmailConfirmed = c.Boolean(nullable: false),
+                        PasswordHash = c.String(maxLength: 8000, unicode: false),
+                        SecurityStamp = c.String(maxLength: 8000, unicode: false),
+                        PhoneNumber = c.String(maxLength: 8000, unicode: false),
+                        PhoneNumberConfirmed = c.Boolean(nullable: false),
+                        TwoFactorEnabled = c.Boolean(nullable: false),
+                        LockoutEndDateUtc = c.DateTime(),
+                        LockoutEnabled = c.Boolean(nullable: false),
+                        AccessFailedCount = c.Int(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 256, unicode: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.TarefaTag",
@@ -66,6 +88,7 @@ namespace MustDo.Infra.Data.Migrations
             DropIndex("dbo.TarefaTag", new[] { "Tarefa_TarefaId" });
             DropIndex("dbo.Tarefas", new[] { "CategoriaId" });
             DropTable("dbo.TarefaTag");
+            DropTable("dbo.AspNetUsers");
             DropTable("dbo.Tags");
             DropTable("dbo.Tarefas");
             DropTable("dbo.Categorias");

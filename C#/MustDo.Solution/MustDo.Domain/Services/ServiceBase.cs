@@ -43,5 +43,15 @@ namespace MustDo.Domain.Services
 		{
 			_repositoryBase.Remover(entity);
 		}
-	}
+
+        void IServiceBase<T>.ObterIdUsuario(string id)
+        {
+            _repositoryBase.ObterIdUsuario(id);
+        }
+
+        void ObterIdUsuario(string id)
+        {
+            _repositoryBase.ObterIdUsuario(id);
+        }
+    }
 }

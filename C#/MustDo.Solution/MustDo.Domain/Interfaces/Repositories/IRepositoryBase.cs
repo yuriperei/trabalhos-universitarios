@@ -16,5 +16,7 @@ namespace MustDo.Domain.Interfaces.Repositories
 		void Remover(T entity);
 
 		void Remover(int? id);
+
+        void ObterIdUsuario(string id);
 	}
 }

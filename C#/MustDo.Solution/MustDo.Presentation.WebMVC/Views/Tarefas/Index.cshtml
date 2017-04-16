@@ -6,12 +6,16 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<p>
-  @Html.ActionLink("Finalizar Tarefas Atrasadas", "FinalizarTarefasAtrasadas")
-</p>
+<table class="table">
+    <tr>
+        <td>
+            @Html.ActionLink("Nova tarefa", "Create", new { @class = "btn btn-primary btn-lg" })
+        </td>
+        <td>
+            @Html.ActionLink("Finalizar Tarefas Atrasadas", "FinalizarTarefasAtrasadas", new { @class = "btn btn-primary btn-lg" })
+        </td>
+    </tr>
+</table>
 <table class="table">
     <tr>
         <th>

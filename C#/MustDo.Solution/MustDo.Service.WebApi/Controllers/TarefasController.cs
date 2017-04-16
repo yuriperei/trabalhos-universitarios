@@ -12,6 +12,7 @@ using MustDo.Domain.Entities;
 using MustDo.Infra.Data.Contexts;
 using MustDo.Service.WebApi.Models;
 using MustDo.Domain.Interfaces.Services;
+using MustDo.Domain.ENUM;
 
 namespace MustDo.Service.WebApi.Controllers
 {
@@ -36,6 +37,7 @@ namespace MustDo.Service.WebApi.Controllers
 
         // GET: api/Tarefas/PorCategoria/{id}
         [HttpGet]
+        [Route("api/TarefasPorCategoria/{id}")]
         public IEnumerable<TarefaDTO> PorCategoria(int id)
         {
             var tarefaDomain = _tarefaService.ObterTarefasPorCategoria(id);
@@ -46,8 +48,9 @@ namespace MustDo.Service.WebApi.Controllers
             return null;
         }
 
-        // GET: api/Tarefas/PorTag/{id}
+        // GET: api/TarefasPorTag/{id}
         [HttpGet]
+        [Route("api/TarefasPorTag/{id}")]
         public IEnumerable<TarefaDTO> PorTag(int id)
         {
             var tag = _tagServie.ObterPorId(id);
@@ -90,8 +93,6 @@ namespace MustDo.Service.WebApi.Controllers
             try
             {
                 var tarefaDomain = AutoMapper.Mapper.Map<Tarefa>(tarefaDTO);
-                //var tarefaBase = _tarefaService.ObterPorId(id);
-                //tarefaBase.(tarefaDomain);
                 _tarefaService.Alterar(tarefaDomain);
             }
             catch (Exception)
@@ -132,11 +133,5 @@ namespace MustDo.Service.WebApi.Controllers
 
             return Ok(tarefaDTO);
         }
-
-
-        //private bool TarefaExists(int id)
-        //{
-        //    return db.Tarefas.Count(e => e.TarefaId == id) > 0;
-        //}
     }
 }

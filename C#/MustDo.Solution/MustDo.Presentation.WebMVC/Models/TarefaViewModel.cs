@@ -31,7 +31,9 @@ namespace MustDo.Presentation.WebMVC.Models
 		[DataType(DataType.Time, ErrorMessage = "Hora com formato inválido")]
 		public DateTime HoraFinalizacao { get; set; }
 
-		public Categoria Categoria { get; set; }
+        public string UsuarioId { get; set; }
+
+        public Categoria Categoria { get; set; }
 
 		[Display(Name = "Categoria")]
 		[Required(ErrorMessage = "É preciso informar uma categoria")]

@@ -85,8 +85,6 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TagsIds, "Tags", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.DropDownList("AutorId", null, htmlAttributes: new { @class = "form-control" })*@
-                @*@Html.ListBoxFor(model => model.AutoresIds, ViewBag.Autores as IEnumerable<SelectListItem>, htmlAttributes: new { @class = "form-control", @multiple = "" })*@
                 @Html.ListBoxFor(model => model.TagsIds, ViewBag.Tags as IEnumerable<SelectListItem>, htmlAttributes: new { @class = "form-control" })
 
                 @Html.ValidationMessageFor(model => model.TagsIds, "", new { @class = "text-danger" })

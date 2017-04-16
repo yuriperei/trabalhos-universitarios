@@ -1,4 +1,5 @@
-﻿using MustDo.Domain.Entities;
+﻿using Microsoft.AspNet.Identity;
+using MustDo.Domain.Entities;
 using MustDo.Domain.Interfaces.Services;
 using MustDo.Presentation.WebMVC.Models;
 using System;
@@ -15,12 +16,13 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		public TagsController(ITagService tagService)
 		{
 			_tagService = tagService;
-		}
+        }
 
 		// GET: Tags
 		public ActionResult Index()
 		{
-			var tags = _tagService.ObterTodos();
+            ObterIdUsuario();
+            var tags = _tagService.ObterTodos();
 			var tagsView = AutoMapper.Mapper.Map<IEnumerable<Tag>, IEnumerable<TagViewModel>>(tags);
 
 			return View(tagsView);
@@ -58,7 +60,8 @@ namespace MustDo.Presentation.WebMVC.Controllers
 			if (ModelState.IsValid)
 			{
 				var tagDomain = AutoMapper.Mapper.Map<Tag>(tagView);
-				_tagService.Adicionar(tagDomain);
+                tagDomain.UsuarioId = User.Identity.GetUserId();
+                _tagService.Adicionar(tagDomain);
 				return RedirectToAction("Index");
 			}
 
@@ -86,11 +89,12 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "TagId,Nome")] TagViewModel tagView)
+		public ActionResult Edit([Bind(Include = "TagId,Nome,UsuarioId")] TagViewModel tagView)
 		{
 			if (ModelState.IsValid)
 			{
-				var tagDomain = AutoMapper.Mapper.Map<Tag>(tagView);
+                ObterIdUsuario();
+                var tagDomain = AutoMapper.Mapper.Map<Tag>(tagView);
 				_tagService.Alterar(tagDomain);
 				return RedirectToAction("Index");
 			}
@@ -122,5 +126,10 @@ namespace MustDo.Presentation.WebMVC.Controllers
 			_tagService.Remover(tag);
 			return RedirectToAction("Index");
 		}
-	}
+
+        public void ObterIdUsuario()
+        {
+            _tagService.ObterIdUsuario(User.Identity.GetUserId());
+        }
+    }
 }

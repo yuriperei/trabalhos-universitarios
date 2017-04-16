@@ -1,6 +1,7 @@
 ﻿using MustDo.Domain.ENUM;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,10 +12,13 @@ namespace MustDo.Service.WebApi.Models
         public int TarefaId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+
         public SituacaoTarefaEnum Situacao { get; set; }
 
-        public DateTime DataCriacao { get; set; }
+        public string SituacaoDescricao { get; set; }
 
+        public DateTime DataCriacao { get; set; }
+        
         public DateTime DataFinalizacao { get; set; }
 
         public DateTime HoraFinalizacao { get; set; }

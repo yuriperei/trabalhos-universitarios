@@ -47,13 +47,9 @@
     <Compile Include="Mappings\TagMap.cs" />
     <Compile Include="Mappings\TarefaMap.cs" />
     <Compile Include="Mappings\UsuarioMap.cs" />
-    <Compile Include="Migrations\201704150536014_StartDb.cs" />
-    <Compile Include="Migrations\201704150536014_StartDb.Designer.cs">
-      <DependentUpon>201704150536014_StartDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704152324197_001.cs" />
-    <Compile Include="Migrations\201704152324197_001.Designer.cs">
-      <DependentUpon>201704152324197_001.cs</DependentUpon>
+    <Compile Include="Migrations\201704160501314_StarDb.cs" />
+    <Compile Include="Migrations\201704160501314_StarDb.Designer.cs">
+      <DependentUpon>201704160501314_StarDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +70,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704150536014_StartDb.resx">
-      <DependentUpon>201704150536014_StartDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704152324197_001.resx">
-      <DependentUpon>201704152324197_001.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704160501314_StarDb.resx">
+      <DependentUpon>201704160501314_StarDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

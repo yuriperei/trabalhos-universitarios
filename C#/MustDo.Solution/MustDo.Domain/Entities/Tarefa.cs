@@ -13,16 +13,15 @@ namespace MustDo.Domain.Entities
 		public SituacaoTarefaEnum Situacao { get; set; }
 		public DateTime DataCriacao { get; set; }
 		public DateTime DataFinalizacao { get; set; }
+        public string UsuarioId { get; set; }
 
-		#region Foreign Key
+        #region Foreign Key
+        public int CategoriaId { get; set; }
+        #endregion
 
-		public int CategoriaId { get; set; }
+        #region Virtual
 
-		#endregion
-
-		#region Virtual
-
-		public virtual Categoria Categoria { get; set; }
+        public virtual Categoria Categoria { get; set; }
 		public virtual ICollection<Tag> Tags { get; set; }
 
         #endregion

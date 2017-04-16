@@ -7,13 +7,13 @@ namespace MustDo.Infra.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class StartDb : IMigrationMetadata
+    public sealed partial class StarDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(StartDb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(StarDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704150536014_StartDb"; }
+            get { return "201704160501314_StarDb"; }
         }
         
         string IMigrationMetadata.Source

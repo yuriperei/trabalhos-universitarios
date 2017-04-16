@@ -1,4 +1,5 @@
-﻿using MustDo.Domain.Entities;
+﻿using Microsoft.AspNet.Identity;
+using MustDo.Domain.Entities;
 using MustDo.Domain.ENUM;
 using MustDo.Domain.Interfaces.Services;
 using MustDo.Presentation.WebMVC.Models;
@@ -20,18 +21,17 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		{
 			_tarefaService = tarefaService;
 			_categoriaService = categoriaService;
-            _tagService = tagService;
-		}
+            _tagService = tagService;     
+        }
 
 		// GET: Tarefas
 		public ActionResult Index()
 		{
-			var tarefas = _tarefaService.ObterTodos();
+            ObterIdUsuario();
+            var tarefas = _tarefaService.ObterTodos();
 			var tarefasView = AutoMapper.Mapper.Map<IEnumerable<Tarefa>, IEnumerable<TarefaViewModelDetails>>(tarefas);
 			return View(tarefasView);
 		}
-
-
 
 		// GET: Tarefas/Details/5
 		public ActionResult Details(int? id)
@@ -53,7 +53,7 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		public ActionResult Create()
 		{
 			ViewBag.CategoriaId = new SelectList(ObterTodasCategorias(), "CategoriaId", "Nome");
-            ViewBag.Tags = new SelectList(ObterTodasTags(), "TagId", "Nome");
+            ViewBag.Tags = new MultiSelectList(ObterTodasTags(), "TagId", "Nome");
             return View();
 		}
 
@@ -68,6 +68,7 @@ namespace MustDo.Presentation.WebMVC.Controllers
 			{
 				var tarefaDomain = AutoMapper.Mapper.Map<Tarefa>(tarefaView);
 				tarefaDomain.DataCriacao = DateTime.Now;
+                tarefaDomain.UsuarioId = User.Identity.GetUserId();
                 tarefaDomain.Tags = _tagService.ObterTodos().Where(m => tarefaView.TagsIds.Contains(m.TagId)).ToList();
 
 				VerificaFinalizacaoTarefa(tarefaDomain);
@@ -76,7 +77,7 @@ namespace MustDo.Presentation.WebMVC.Controllers
             }
 
 			ViewBag.CategoriaId = new SelectList(ObterTodasCategorias(), "CategoriaId", "Nome", tarefaView.CategoriaId);
-            ViewBag.Tags = new SelectList(ObterTodasTags(), "TagId", "Nome", ObterIdsTags(tarefaView));
+            ViewBag.Tags = new MultiSelectList(ObterTodasTags(), "TagId", "Nome", ObterIdsTags(tarefaView));
             return View(tarefaView);
 		}
 
@@ -87,7 +88,7 @@ namespace MustDo.Presentation.WebMVC.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			var tarefa = _tarefaService.ObterPorId(id);
+            var tarefa = _tarefaService.ObterPorId(id);
 			var tarefaView = AutoMapper.Mapper.Map<TarefaViewModel>(tarefa);
 			if (tarefaView == null)
 			{
@@ -105,11 +106,12 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "TarefaId,Nome,Descricao,Situacao,DataCriacao, DataFinalizacao,HoraFinalizacao,CategoriaId,TagsIds")] TarefaViewModel tarefaView)
+		public ActionResult Edit([Bind(Include = "TarefaId,Nome,Descricao,Situacao,DataCriacao, DataFinalizacao,HoraFinalizacao,CategoriaId,TagsIds,UsuarioId")] TarefaViewModel tarefaView)
 		{
 			if (ModelState.IsValid)
 			{
-				var tarefaDomain = AutoMapper.Mapper.Map<Tarefa>(tarefaView);
+                ObterIdUsuario();
+                var tarefaDomain = AutoMapper.Mapper.Map<Tarefa>(tarefaView);
                 tarefaDomain.Tags = _tagService.ObterTodos().Where(m => tarefaView.TagsIds.Contains(m.TagId)).ToList();
 
                 var tarefaBase = _tarefaService.ObterPorId(tarefaDomain.TarefaId);
@@ -153,6 +155,7 @@ namespace MustDo.Presentation.WebMVC.Controllers
 
 		public ActionResult FinalizarTarefasAtrasadas()
 		{
+            ObterIdUsuario();
 			_tarefaService.FinalizarTarefasAtrasadas();
 			return RedirectToAction("Index");
 		}
@@ -195,17 +198,25 @@ namespace MustDo.Presentation.WebMVC.Controllers
 
 		private IEnumerable<CategoriaViewModel> ObterTodasCategorias()
 		{
-			var categorias = _categoriaService.ObterTodos();
+            ObterIdUsuario();
+            var categorias = _categoriaService.ObterTodos();
 			var categoriasView = AutoMapper.Mapper.Map<IEnumerable<Categoria>, IEnumerable<CategoriaViewModel>>(categorias);
 			return categoriasView;
 		}
-
         private IEnumerable<TagViewModel> ObterTodasTags()
         {
+            ObterIdUsuario();
             var tags = _tagService.ObterTodos();
             var tagsView = AutoMapper.Mapper.Map<IEnumerable<Tag>, IEnumerable<TagViewModel>>(tags);
             return tagsView;
         }
+        public void ObterIdUsuario()
+        {
+            _tarefaService.ObterIdUsuario(User.Identity.GetUserId());
+            _tagService.ObterIdUsuario(User.Identity.GetUserId());
+            _categoriaService.ObterIdUsuario(User.Identity.GetUserId());
+        }
+
 
         private int[] ObterIdsTags(TarefaViewModel tarefaView)
         {

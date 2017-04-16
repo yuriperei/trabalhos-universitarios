@@ -1,4 +1,5 @@
-﻿using MustDo.Domain.Entities;
+﻿using Microsoft.AspNet.Identity;
+using MustDo.Domain.Entities;
 using MustDo.Domain.Interfaces.Services;
 using MustDo.Presentation.WebMVC.Models;
 using System;
@@ -16,14 +17,15 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		public CategoriasController(ICategoriaService categoriaService)
 		{
 			_categoriaService = categoriaService;
-		}
+            
+        }
 
 		// GET: Categorias
 		public ActionResult Index()
 		{
-			var categorias = _categoriaService.ObterTodos();
+            ObterIdUsuario();
+            var categorias = _categoriaService.ObterTodos();
 			var categoriasView = AutoMapper.Mapper.Map<IEnumerable<Categoria>, IEnumerable<CategoriaViewModel>>(categorias);
-
 			return View(categoriasView);
 		}
 
@@ -59,7 +61,8 @@ namespace MustDo.Presentation.WebMVC.Controllers
 			if (ModelState.IsValid)
 			{
 				var categoriaDomain = AutoMapper.Mapper.Map<Categoria>(categoriaView);
-				_categoriaService.Adicionar(categoriaDomain);
+                categoriaDomain.UsuarioId = User.Identity.GetUserId();
+                _categoriaService.Adicionar(categoriaDomain);
 				return RedirectToAction("Index");
 			}
 
@@ -87,15 +90,17 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "CategoriaId,Nome,Descricao")] CategoriaViewModel categoriaView)
+		public ActionResult Edit([Bind(Include = "CategoriaId,Nome,Descricao,UsuarioId")] CategoriaViewModel categoriaView)
 		{
 			if (ModelState.IsValid)
 			{
-				var categoriaDomain = AutoMapper.Mapper.Map<Categoria>(categoriaView);
+                ObterIdUsuario();
+                var categoriaDomain = AutoMapper.Mapper.Map<Categoria>(categoriaView);
 				_categoriaService.Alterar(categoriaDomain);
 				return RedirectToAction("Index");
 			}
-			return View(categoriaView);
+            
+            return View(categoriaView);
 		}
 
 		// GET: Categorias/Delete/5
@@ -121,7 +126,12 @@ namespace MustDo.Presentation.WebMVC.Controllers
 		{
 			var categoria = _categoriaService.ObterPorId(id);
 			_categoriaService.Remover(categoria);
-			return RedirectToAction("Index");
+            return RedirectToAction("Index");
 		}
-	}
+
+        public void ObterIdUsuario()
+        {
+            _categoriaService.ObterIdUsuario(User.Identity.GetUserId());
+        }
+    }
 }

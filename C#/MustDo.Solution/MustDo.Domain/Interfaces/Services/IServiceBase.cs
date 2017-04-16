@@ -16,5 +16,7 @@ namespace MustDo.Domain.Interfaces.Services
 		void Remover(T entity);
 
 		void Remover(int? id);
-	}
+
+        void ObterIdUsuario(string id);
+    }
 }
