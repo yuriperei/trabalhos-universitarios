@@ -11,7 +11,8 @@ using System.Web.Mvc;
 
 namespace MustDo.Presentation.WebMVC.Controllers
 {
-	public class TarefasController : Controller
+    [Authorize]
+    public class TarefasController : Controller
 	{
 		private readonly ITarefaService _tarefaService;
 		private readonly ICategoriaService _categoriaService;

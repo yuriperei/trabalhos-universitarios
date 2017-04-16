@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWid8Y1roVkyhNKHlDmaCUAAAAAACAAAAAAAQZgAAAAEAACAAAAAuS2hib1RhQph+MFWqvmSQdfXRbdF5w1xCbPEYJCTKiwAAAAAOgAAAAAIAACAAAAAoG0KCokYvPsKblncKiDuQZgdsB4f4U6AV/22RBjJC9IAAAABYcAD+dYC8y0HZnQNmUcunFDr3yScTFmaHf150HxH0EUAfyfXN4LnIk2x+cku7b6scHvHsSjD6p2l6llh9CIRCyejv17aXXxWAs7Phd2BZHE7YCyWMfJHDO9kS6PoiIrKdkzp6EhtMBqdDucGRnFjxgwKkluxQehqz++KuFecDd0AAAABjKsFphJj/t22U2c/TQW1L2VdcdAMNAQU7uZiGHpexTkEeKQAVRmJ+IzVPX2gD9lmyNW8ZlITBcKE/3BX8qzSX</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=tcp:mustdo.database.windows.net,1433;Initial Catalog=mustdo;User ID=mustdo@mustdo;Password=Yuri.9639012" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:mustdoidentity.database.windows.net,1433;Initial Catalog=mustdoidentity;User ID=mustdoidentity@mustdoidentity;Password=Yuri.9639012" />
+  </ItemGroup>
+</Project>

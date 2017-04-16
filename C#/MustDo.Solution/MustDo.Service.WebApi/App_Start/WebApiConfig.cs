@@ -12,7 +12,7 @@ namespace MustDo.Service.WebApi
         {
             //Libera o acesso para qualquer host
             //(origins: "http://www.example.com", headers: "*", methods: "get,post")
-            var cors = new EnableCorsAttribute("*", "*", "*");
+            var cors = new EnableCorsAttribute("http://mustdo-webapi.azurewebsites.net/", "*", "*");
             config.EnableCors(cors);
 
 

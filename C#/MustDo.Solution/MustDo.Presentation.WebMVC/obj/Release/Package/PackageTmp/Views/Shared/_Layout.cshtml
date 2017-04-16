@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/app")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/jquery")
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+
+    <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-dark aside-md" id="nav" style="width:300px">
+            <section class="vbox">
+                @*<header class="nav-bar dker"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body"> <i class="icon-reorder"></i> </a> <img class="nav-brand" src="~/Content/img/logo.png" /> <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i class="icon-comment-alt"></i> </a> </header>*@
+                <header class="nav-bar dker" style="padding:8px 8px 8px 15px;"><img src="~/Content/img/logo.png" /></header>
+                <section style="margin-top:25px;">
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+                        }
+                            <div class="lt nav-user hidden-xs pos-rlt">
+                                <div class="nav-avatar pos-rlt">
+                                    <span class="caret caret-white"></span>
+                                    <a href="#" class="thumb-sm" data-toggle="dropdown" style="padding:8px 5px 8px 4px;">
+                                        @User.Identity.GetUserName()
+                                    </a>
+                                    <ul class="dropdown-menu m-t-sm animated fadeInLeft">
+                                        <span class="arrow top"></span>
+                                        <li> @Html.ActionLink("Perfil", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                                        <li class="divider"></li>
+                                        <li> <a href="javascript:document.getElementById('logoutForm').submit()">Desconectar</a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <nav class="nav-primary hidden-xs">
+                                <ul class="nav">
+                                    <li> @Html.ActionLink("Tarefas", "Index", "Tarefas")</li>
+                                    <li> @Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                                    <li> @Html.ActionLink("Tags", "Index", "Tags")</li>
+                                </ul>
+                            </nav>
+                        
+                    }
+                    else
+                    {
+                        <nav class="nav-primary hidden-xs">
+                            <ul class="nav">
+                                <li>@Html.ActionLink("Registrar", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li>@Html.ActionLink("Acessar", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            </ul>
+                        </nav>
+                    }
+
+
+                </section>
+            </section>
+        </aside>
+
+
+        <section id="container">
+
+            <header class="header bg-light lter bg-gradient b-b">
+
+                <p><b>&raquo; @ViewBag.Title</b></p>
+            </header>
+
+            <section class="scrollable wrapper">
+
+                @RenderBody()
+
+            </section>
+
+        </section>
+    </section>
+    <!-- /.vbox -->
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

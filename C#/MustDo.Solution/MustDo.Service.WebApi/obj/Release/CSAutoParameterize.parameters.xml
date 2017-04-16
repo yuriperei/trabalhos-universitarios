@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MustDo4EntitiesDb-Web.config Connection String" description="MustDo4EntitiesDb Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=MustDo4EntitiesDb; Integrated Security=True; MultipleActiveResultSets=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\trabalhos-universitarios\\C\#\\MustDo\.Solution\\MustDo\.Service\.WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MustDo4EntitiesDb']/@connectionString" />
+  </parameter>
+</parameters>

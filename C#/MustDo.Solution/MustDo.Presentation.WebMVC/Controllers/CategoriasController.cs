@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MustDo.Presentation.WebMVC.Controllers
 {
+    [Authorize]
 	public class CategoriasController : Controller
 	{
 		private readonly ICategoriaService _categoriaService;

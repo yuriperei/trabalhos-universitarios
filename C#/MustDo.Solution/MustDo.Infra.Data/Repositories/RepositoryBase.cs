@@ -52,7 +52,10 @@ namespace MustDo.Infra.Data.Repositories
 
 		public void Remover(T entity)
 		{
-			_db.Set<T>().Remove(entity);
+            if (_db.Entry(entity).State == EntityState.Detached)
+                _db.Set<T>().Attach(entity);
+
+            _db.Set<T>().Remove(entity);
 			_db.SaveChanges();
 		}
 

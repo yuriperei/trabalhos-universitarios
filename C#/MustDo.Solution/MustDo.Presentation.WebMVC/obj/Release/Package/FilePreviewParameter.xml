@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mustdo" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\trabalhos-universitarios\\C\#\\MustDo\.Solution\\MustDo\.Presentation\.WebMVC\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\trabalhos-universitarios\\C\#\\MustDo\.Solution\\MustDo\.Presentation\.WebMVC\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:mustdoidentity.database.windows.net,1433;Initial Catalog=mustdoidentity;User ID=mustdoidentity@mustdoidentity;Password=Yuri.9639012" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\trabalhos-universitarios\\C\#\\MustDo\.Solution\\MustDo\.Presentation\.WebMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="MustDo4EntitiesDb-Web.config Connection String" description="" value="data source=tcp:mustdo.database.windows.net,1433;initial catalog=mustdo;user id=mustdo@mustdo;password=Yuri.9639012;MultipleActiveResultSets=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\trabalhos-universitarios\\C\#\\MustDo\.Solution\\MustDo\.Presentation\.WebMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MustDo4EntitiesDb']/@connectionString" />
+  </parameter>
+</parameters>

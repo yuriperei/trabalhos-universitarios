@@ -1,0 +1,5 @@
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\bin\Release\MustDo.Domain.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\bin\Release\MustDo.Domain.pdb
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\obj\Release\MustDo.Domain.csprojResolveAssemblyReference.cache
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\obj\Release\MustDo.Domain.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\obj\Release\MustDo.Domain.pdb

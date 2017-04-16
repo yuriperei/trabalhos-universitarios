@@ -9,7 +9,8 @@ using System.Web.Mvc;
 
 namespace MustDo.Presentation.WebMVC.Controllers
 {
-	public class TagsController : Controller
+    [Authorize]
+    public class TagsController : Controller
 	{
 		private readonly ITagService _tagService;
 

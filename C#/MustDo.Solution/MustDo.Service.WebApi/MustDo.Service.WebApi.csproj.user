@@ -9,6 +9,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_DbContextTypeFullName>MustDo.Infra.Data.Contexts.MustDo4EntitiesDb</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>mustdo-webapi - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MustDo.Presentation.WebMVC.Models.TarefaViewModelDetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<ul class="nav nav-pills">
+    <li role="presentation" class="active">@Html.ActionLink("Nova tarefa", "Create")</li>
+    <li role="presentation" class="active">@Html.ActionLink("Finalizar Tarefas Atrasadas", "FinalizarTarefasAtrasadas")</li>
+</ul>
+<br/>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoriaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Situacao)
+        </th>
+      <th>
+        @Html.DisplayNameFor(model => model.DataCriacao)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.DataFinalizacao)
+      </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Situacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCriacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFinalizacao) às @Html.DisplayFor(modelItem => item.HoraFinalizacao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TarefaId }) |
+          @Html.ActionLink("Finalizar Tarefa", "FinalizarTarefa", new { id = item.TarefaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TarefaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TarefaId })
+        </td>
+    </tr>
+}
+
+</table>

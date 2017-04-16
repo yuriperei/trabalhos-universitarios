@@ -420,7 +420,7 @@ namespace MustDo.Presentation.WebMVC.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Tarefas");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

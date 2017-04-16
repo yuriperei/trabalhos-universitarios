@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<MustDo.Presentation.WebMVC.Models.TarefaViewModelDetails>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de Tarefas";
 }
 
-<h2>Index</h2>
+<h2>Lista de Tarefas</h2>
 
 <ul class="nav nav-pills">
     <li role="presentation" class="active">@Html.ActionLink("Nova tarefa", "Create")</li>
@@ -55,10 +55,12 @@
             @Html.DisplayFor(modelItem => item.DataFinalizacao) às @Html.DisplayFor(modelItem => item.HoraFinalizacao)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TarefaId }) |
-          @Html.ActionLink("Finalizar Tarefa", "FinalizarTarefa", new { id = item.TarefaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TarefaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TarefaId })
+            <ul class="nav nav-pills">
+                <li role="presentation" class="alert-warning">@Html.ActionLink("Editar", "Edit", new { id = item.TarefaId })</li>
+                <li role="presentation" class="alert-success">@Html.ActionLink("Finalizar Tarefa", "FinalizarTarefa", new { id = item.TarefaId })</li>
+                <li role="presentation" class="alert-info">@Html.ActionLink("Detalhar", "Details", new { id = item.TarefaId })</li>
+                <li role="presentation" class="alert-danger">@Html.ActionLink("Deletar", "Delete", new { id = item.TarefaId })</li>
+            </ul>
         </td>
     </tr>
 }

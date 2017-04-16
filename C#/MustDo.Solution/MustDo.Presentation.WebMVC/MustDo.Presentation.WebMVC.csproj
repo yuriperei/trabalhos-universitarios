@@ -490,6 +490,8 @@
     <Content Include="fonts\fontawesome-webfont.eot%40" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
+    <None Include="Properties\PublishProfiles\mustdo - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mustdo - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\ar.js" />
     <Content Include="Scripts\i18n\az.js" />

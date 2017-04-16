@@ -1,0 +1,14 @@
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\MustDo.Infra.Data.dll.config
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\MustDo.Infra.Data.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\MustDo.Infra.Data.pdb
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\EntityFramework.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\MustDo.Domain.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\MustDo.Domain.pdb
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\EntityFramework.xml
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Release\MustDo.Infra.Data.csprojResolveAssemblyReference.cache
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Release\MustDo.Infra.Data.Migrations.StarDb.resources
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Release\MustDo.Infra.Data.csproj.GenerateResource.Cache
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Release\MustDo.Infra.Data.dll
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.Data\obj\Release\MustDo.Infra.Data.pdb

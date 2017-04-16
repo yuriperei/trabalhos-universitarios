@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<MustDo.Presentation.WebMVC.Models.CategoriaViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de categorias";
 }
 
-<h2>Index</h2>
+<h2>Lista de categorias</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<ul class="nav nav-pills">
+    <li role="presentation" class="active">@Html.ActionLink("Nova categoria", "Create")</li>
+</ul>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -29,9 +30,11 @@
             @Html.DisplayFor(modelItem => item.Descricao)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoriaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoriaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoriaId })
+            <ul class="nav nav-pills">
+                <li role="presentation" class="alert-warning">@Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId })</li>
+                <li role="presentation" class="alert-info">@Html.ActionLink("Detalhar", "Details", new { id = item.CategoriaId })</li>
+                <li role="presentation" class="alert-danger">@Html.ActionLink("Deletar", "Delete", new { id = item.CategoriaId })</li>
+            </ul>
         </td>
     </tr>
 }
