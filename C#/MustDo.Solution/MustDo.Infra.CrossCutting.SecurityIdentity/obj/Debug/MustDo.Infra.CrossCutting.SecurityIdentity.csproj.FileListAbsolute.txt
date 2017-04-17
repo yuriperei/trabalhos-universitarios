@@ -73,3 +73,4 @@ C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.Securit
 C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\bin\Debug\System.Web.WebPages.Razor.xml
 C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\bin\Debug\System.Web.WebPages.xml
 C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Infra.CrossCutting.SecurityIdentity\obj\Debug\MustDo.Infra.CrossCutting.SecurityIdentity.csprojResolveAssemblyReference.cache

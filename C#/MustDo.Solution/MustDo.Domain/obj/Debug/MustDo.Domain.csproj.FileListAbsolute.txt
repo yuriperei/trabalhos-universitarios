@@ -7,3 +7,4 @@ C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.D
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\obj\Debug\MustDo.Domain.dll
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\obj\Debug\MustDo.Domain.pdb
 C:\trabalhos-universitarios\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\obj\Debug\MustDo.Domain.csprojResolveAssemblyReference.cache
+C:\trabalhos-universitarios\C#\MustDo.Solution\MustDo.Domain\obj\Debug\MustDo.Domain.csprojResolveAssemblyReference.cache

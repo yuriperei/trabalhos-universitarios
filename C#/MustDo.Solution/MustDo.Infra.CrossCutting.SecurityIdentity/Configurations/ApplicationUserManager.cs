@@ -44,7 +44,8 @@ namespace MustDo.Infra.CrossCutting.SecurityIdentity.Configurations
             EmailService = new EmailService();
 
             //??
-            var provider = new DpapiDataProtectionProvider("PauloMau");
+            //var provider = new DpapiDataProtectionProvider("PauloMau");
+            var provider = new MachineKeyProtectionProvider();
             var dataProtector = provider.Create("Isolando o ASP.NET Identity");
 
             UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser>(dataProtector);

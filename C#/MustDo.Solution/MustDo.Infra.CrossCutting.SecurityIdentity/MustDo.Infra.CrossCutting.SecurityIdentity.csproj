@@ -86,6 +86,7 @@
     <Compile Include="Configurations\ApplicationSignInManager.cs" />
     <Compile Include="Configurations\ApplicationUserManager.cs" />
     <Compile Include="Configurations\EmailService.cs" />
+    <Compile Include="Configurations\Utilities.cs" />
     <Compile Include="Contexts\ApplicationDbContext.cs" />
     <Compile Include="Models\AddPhoneNumberViewModel.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
