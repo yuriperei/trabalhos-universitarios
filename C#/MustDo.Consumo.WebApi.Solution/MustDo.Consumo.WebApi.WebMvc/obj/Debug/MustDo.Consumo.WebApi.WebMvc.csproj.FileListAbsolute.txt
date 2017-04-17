@@ -75,6 +75,5 @@ C:\trabalhos-universitarios\C#\MustDo.Consumo.WebApi.Solution\MustDo.Consumo.Web
 C:\trabalhos-universitarios\C#\MustDo.Consumo.WebApi.Solution\MustDo.Consumo.WebApi.WebMvc\bin\System.Web.WebPages.Razor.xml
 C:\trabalhos-universitarios\C#\MustDo.Consumo.WebApi.Solution\MustDo.Consumo.WebApi.WebMvc\bin\Antlr3.Runtime.pdb
 C:\trabalhos-universitarios\C#\MustDo.Consumo.WebApi.Solution\MustDo.Consumo.WebApi.WebMvc\bin\Newtonsoft.Json.xml
-C:\trabalhos-universitarios\C#\MustDo.Consumo.WebApi.Solution\MustDo.Consumo.WebApi.WebMvc\obj\Debug\MustDo.Consumo.WebApi.WebMvc.csprojResolveAssemblyReference.cache
 C:\trabalhos-universitarios\C#\MustDo.Consumo.WebApi.Solution\MustDo.Consumo.WebApi.WebMvc\obj\Debug\MustDo.Consumo.WebApi.WebMvc.dll
 C:\trabalhos-universitarios\C#\MustDo.Consumo.WebApi.Solution\MustDo.Consumo.WebApi.WebMvc\obj\Debug\MustDo.Consumo.WebApi.WebMvc.pdb

@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<MustDo.Presentation.WebMVC.Models.TagViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de tags";
 }
 
-<h2>Index</h2>
+<h2>Lista de tags</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<ul class="nav nav-pills">
+    <li role="presentation" class="active">@Html.ActionLink("Nova tag", "Create")</li>
+</ul>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -23,9 +24,11 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TagId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TagId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TagId })
+            <ul class="nav nav-pills">
+                <li role="presentation" class="alert-warning">@Html.ActionLink("Editar", "Edit", new { id = item.TagId })</li>
+                <li role="presentation" class="alert-info">@Html.ActionLink("Detalhar", "Details", new { id = item.TagId })</li>
+                <li role="presentation" class="alert-danger">@Html.ActionLink("Deletar", "Delete", new { id = item.TagId })</li>
+            </ul>
         </td>
     </tr>
 }

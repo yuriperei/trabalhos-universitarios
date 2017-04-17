@@ -12,8 +12,7 @@ namespace MustDo.Consumo.WebApi.WebMvc
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-              "~/Scripts/knockout-{version}.js",
-              "~/Scripts/app.js"));
+              "~/Scripts/knockout-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/appTag").Include(
               "~/Scripts/appTag.js"));
@@ -31,12 +30,10 @@ namespace MustDo.Consumo.WebApi.WebMvc
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/bootstrap-select.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-select.css",
                       "~/Content/site.css"));
         }
     }

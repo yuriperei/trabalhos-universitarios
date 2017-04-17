@@ -5,7 +5,7 @@
 }
 
 @section scripts {
-@Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/app")
     @Scripts.Render("~/bundles/appTag")
 }
 
@@ -24,8 +24,12 @@
         <form class="form-horizontal col-sm-6" data-bind="submit: obterTarefasPorTag">
             <div class="form-group">
                 <div class="col-sm-12">
-                    <select class="selectpicker" required data-bind="options:tags, optionsText: 'Nome', value: tagSeleted.Tag" title="Escolha uma tag..." data-live-search="true"></select>
-                    <button type="submit" class="btn btn-default">Listar</button>
+                    <div class="col-sm-4">
+                        <select class="form-control" data-bind="options:tags, optionsText: 'Nome', value: tagSeleted.Tag"></select>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-default">Listar</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -33,7 +37,7 @@
     </div>
 
     <div class="col-md-12" style="margin-top:25px;">
-            <table class="table">
+        <table class="table">
             <thead>
                 <tr>
                     <th>
@@ -69,12 +73,12 @@
                         <span data-bind="text: DataCriacao" />
                     </td>
                     <td>
-                        <span data-bind="text: DataFinalizacao"> às </span><span data-bind="text: HoraFinalizacao" />
+                        <span data-bind="text: DataFinalizacao"/>
                     </td>
                 </tr>
             </tbody>
         </table>
-        
+
     </div>
 
 </div>

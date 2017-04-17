@@ -1,16 +1,16 @@
 ﻿@model MustDo.Presentation.WebMVC.Models.TagViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Cadastrar";
 }
 
-<h2>Create</h2>
+<h2>Cadastrar</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Tag</h4>
         <hr />
@@ -25,14 +25,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Listar tarefas", "Index")
 </div>
 
 @section Scripts {

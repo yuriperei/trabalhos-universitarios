@@ -12,7 +12,7 @@ namespace MustDo.Service.WebApi
         {
             //Libera o acesso para qualquer host
             //(origins: "http://www.example.com", headers: "*", methods: "get,post")
-            var cors = new EnableCorsAttribute("http://mustdo-webapi.azurewebsites.net/", "*", "*");
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
 
@@ -25,11 +25,6 @@ namespace MustDo.Service.WebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional}
             );
-
-            //config.Routes.MapHttpRoute(
-            //    name: "Personalizada",
-            //    routeTemplate: "api/{controller}/{id}/{action}"
-            //);
         }
     }
 }

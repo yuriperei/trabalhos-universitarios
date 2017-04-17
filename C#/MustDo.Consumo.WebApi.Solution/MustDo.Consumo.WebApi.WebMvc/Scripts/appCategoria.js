@@ -39,5 +39,4 @@
         });
     }
 };
-
 ko.applyBindings(new ViewModel());
