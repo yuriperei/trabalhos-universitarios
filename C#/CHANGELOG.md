@@ -1,3 +1,11 @@
+## [1.0.0] - 2017-04-19
+### Added
+- AutoMapper para trabalhar com ViewModel e Domain.
+- Identity Security
+- Entity Framework
+- Serviço WebApi
+
+
 ## [0.1.0] - 2017-03-27
 ### Added
 - CrossCutting (IoC)
