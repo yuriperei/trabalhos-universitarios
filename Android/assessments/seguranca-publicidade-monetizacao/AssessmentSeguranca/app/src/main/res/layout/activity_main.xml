@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.developer.yurisouza.assessmentseguranca.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:paddingStart="5dp"
+        android:text="Informe o seu nome"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNome"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text="Informe o seu e-mail"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:id="@+id/txtEmail"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text="Informe a sua senha"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/txtSenha"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text="Repita a sua senha"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/txtRepetirSenha"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text="Informe o seu CPF"/>
+    <br.com.sapereaude.maskedEditText.MaskedEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mask:mask="###.###.###-##"
+        android:inputType="number"
+        android:id="@+id/txtCpf"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCadastrar"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#FFF"
+        android:text="Cadastrar"
+        android:onClick="cadastrar"
+        />
+
+</LinearLayout>
