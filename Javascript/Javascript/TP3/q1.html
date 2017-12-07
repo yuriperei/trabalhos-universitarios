@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            function validaValores(valMin, valMax){
+                if(valMin >= valMax){
+                    alert('O valor minimo deve ser menor que o valor maximo');
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+            function retornaDivisiveisPorSeis(valMin, valMax){
+                if(validaValores(valMin, valMax)){
+                    var x = calculaDiv(valMin, valMax);
+                    alert('O total de num div por 2 e 3 sao ' + x);
+                }
+            }
+            function calculaDiv(valMin, valMax){
+                return Math.floor(( valMax - valMin + 2)/6);
+            }
+            function eInteiro(x){
+                if(!Number.isInteger(parseInt(x))){
+                    alert('O valor '+ x + ' nao é um inteiro');
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+            function calcula(){
+                var min = document.getElementById('min').value;
+                var max = document.getElementById('max').value;
+                if(eInteiro(min) && eInteiro(max)){
+                    retornaDivisiveisPorSeis(parseInt(min),parseInt(max));
+                }
+                
+            }
+            
+        </script>
+    </body>
+</html>

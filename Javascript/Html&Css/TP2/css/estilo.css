@@ -1,0 +1,14 @@
+body {background-color: #ffe4b5;
+    font-family: 'Barlow', sans-serif;
+    text-align:left;}
+h1{color: #68330e;
+    font-size:3.0em;
+    padding: 1em;
+}
+h2{
+    color: #68330e;
+    padding: 2em;
+}
+#menu a{color:black;
+    text-decoration:none;}	
+#banner {width:100%;}

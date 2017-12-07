@@ -17,12 +17,12 @@ var Forca = function(dicPalavras, divErros, divAcertos) {
             this.lacunas += ' _ ';
         };
         this.exibeHTML(divAcertos, this.lacunas);
-        document.onkeypress = (evt)=>{
-            evt = evt || window.event;
-            var charCode = evt.keyCode || evt.which;
-            var charStr = String.fromCharCode(charCode);
-            this.verificaLetra(charStr);
-        }
+        // document.onkeypress = (evt)=>{
+        //     evt = evt || window.event;
+        //     var charCode = evt.keyCode || evt.which;
+        //     var charStr = String.fromCharCode(charCode);
+        //     this.verificaLetra(charStr);
+        // }
     };
 
     this.verificaStatusJogo = () => {
@@ -37,7 +37,7 @@ var Forca = function(dicPalavras, divErros, divAcertos) {
     };
 
     this.exibeHTML = function(a, b) {
-        document.getElementById(a).innerHTML = b;
+        // document.getElementById(a).innerHTML = b;
     };
     
     this.verificaLetra = (letra) => {   
@@ -88,7 +88,9 @@ var Forca = function(dicPalavras, divErros, divAcertos) {
 
 };
 
-window.onload = function () {
-    var partida = new Forca(["mineral", "dinossauro", "quadrilha", "vampiro","carro", "luar", "jangada"], "erros", "palavra");
-    partida.inicia();
-};
+// window.onload = function () {
+//     var partida = new Forca(["mineral", "dinossauro", "quadrilha", "vampiro","carro", "luar", "jangada"], "erros", "palavra");
+//     partida.inicia();
+// };
+
+module.exports = Forca;
