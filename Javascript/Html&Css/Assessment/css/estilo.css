@@ -1,0 +1,95 @@
+body { 
+    /* height: 8.5em; */
+    font-family: arial;
+    background-image: url("../img/background.png");
+    background-repeat: repeat;
+}
+
+    #container{
+      width: 940px;
+      margin: 0 auto;
+    }
+
+    .shadow {
+      -moz-box-shadow:    inset 0 0 8px #4c4c4c;
+      -webkit-box-shadow: inset 0 0 8px #4c4c4c;
+      box-shadow:         inset 2 2 8px #4c4c4c;
+    }
+
+    header {
+        width: 100%;
+        margin-bottom: 2em;
+        /*background-color: red;*/
+      }
+      header img {
+          margin-left: 2em;
+      }
+
+      nav {
+        width: 28%;
+        height: 25em;
+        float: left;
+      }
+      nav input{
+        border: 1px;
+        box-shadow: inset 0px 1px 1px 0px #4c4c4c;
+        border-color: #c9c9c9;
+        width: 80%;
+        border-radius: 10px;
+        height: 25px;
+      }
+      nav hr{
+        border: 0.5px solid;
+      }
+      nav #busca{
+        padding: 0.4em;
+        border-radius: 5px 5px 0px 0px;
+        background-color: #dbdbdb;
+      }
+      nav #search{
+        background: url("../img/busca.png");
+        border: 0px;
+        width: 16px;
+        height: 16px;
+      }
+      main {
+        width: 70%;
+        float: left;
+        margin-left: 0.5em;
+      }
+      main img{
+        float: right;
+        width: 100%;
+      }
+      /*
+      footer {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      } */
+      #carrinho{
+         float: right;
+         width: 10em;
+         height: 5em;
+         margin-right: 1.5em;
+         margin-top:1em;
+      }
+      #carrinho img{
+        float: right;
+        margin: 10px;
+      }
+      #menu{
+        float: right;
+        text-align: right;
+        width: 100%;
+        margin-top: -1.5em;
+        padding-right: 2em;
+      }
+      #menu a{
+        color:green;
+        text-decoration: none;
+      }
