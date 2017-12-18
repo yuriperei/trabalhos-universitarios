@@ -1,35 +1,118 @@
 <!DOCTYPE html>
 <html>
-    <style type="text/css">
-        .carta{
-            padding: 2 2 2 2px;
-            margin: 2 2 2 2px;
-            border: 1 1 1 1px solid;
-        }
-    </style>
-    <script type="text/javascript" 
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
-    <script type="text/javascript" src="jogomemoria.js"></script>
-    <body>
-        <div id='statusjogo'></div>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        <img src="img/verso.png" class="carta"></img>
-        
-        <p><button id="novojogo">Novo Jogo</button></p>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Memória do Yuri</title>
+</head>
+<style type="text/css">
+    .carta {
+        padding: 1em;
+        margin: 1em;
+        border: 1 1 1 1px solid;
+        width: 6em;
+        height: 6em;
+    }
+
+    .container {
+        margin: 1.5em;
+        padding-left: 1em;
+    }
+
+    .section {
+        float: left;
+        width: 45em;
+    }
+
+    .section .content {
+        margin: 0 auto !important;
+        text-align: center;
+    }
+
+    .main {
+        float: left;
+        width: 45em;
+    }
+
+    #statusjogo {
+        font-size: 2em;
+        color: black;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    #time {
+        font-size: 1.5em;
+        color: navy;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .pontuacao{
+        margin-top: 2em;
+        font-size: 2em;
+    }
+
+    .pontuacao #ptsAcerto{
+        color: green;
+    }
+
+    .pontuacao #ptsErro{
+        color: red;
+    }
+
+    #novojogo {
+        width: 20em;
+        padding: 1em;
+        border: 1px;
+        margin-top: 2em;
+        border-radius: 1em;
+        box-shadow: inset 0px 1px 1px 0px #4c4c4c;
+        border-color: #c9c9c9;
+        color: white;
+        background-color: navy;
+        font-size: 1em;
+        align-content: center;
+    }
+</style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+</script>
+<script type="text/javascript" src="jogomemoria.js"></script>
+
+<body class="container">
+
+    <div class="section">
+        <div class="content">
+            <button id="novojogo">NOVO JOGO</button>
+            <h2 id='statusjogo'></h2>
+            <h3 id='time'></h3>
+            <div class="pontuacao">
+                <div id='ptsAcerto'></div>
+                <div id='ptsErro'></div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <img src="img/android.png" class="carta"></img>
+        <img src="img/android.png" class="carta"></img>
+        <img src="img/chrome.png" class="carta"></img>
+        <img src="img/chrome.png" class="carta"></img>
+        <img src="img/facebook.png" class="carta"></img>
+        <img src="img/facebook.png" class="carta"></img>
+        <img src="img/firefox.png" class="carta"></img>
+        <img src="img/firefox.png" class="carta"></img>
+        <img src="img/googleplus.png" class="carta"></img>
+        <img src="img/googleplus.png" class="carta"></img>
+        <img src="img/html5.png" class="carta"></img>
+        <img src="img/html5.png" class="carta"></img>
+        <img src="img/twitter.png" class="carta"></img>
+        <img src="img/twitter.png" class="carta"></img>
+        <img src="img/windows.png" class="carta"></img>
+        <img src="img/windows.png" class="carta"></img>
+    </div>
+</body>
+
 </html>
