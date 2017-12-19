@@ -1,0 +1,121 @@
+nav {
+  width: 28%;
+  height: 25em;
+  float: left;
+}
+
+nav input {
+  border: 1px;
+  box-shadow: inset 0px 1px 1px 0px #4c4c4c;
+  border-color: #c9c9c9;
+  width: 80%;
+  border-radius: 10px;
+  height: 25px;
+}
+
+nav #busca {
+  padding: 0.4em;
+  padding-top: 1em;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #dbdbdb;
+  margin-bottom: 0.5em;
+}
+
+nav #search {
+  background: url("../img/busca.png");
+  border: 0px;
+  width: 16px;
+  height: 16px;
+}
+
+nav #departamentos {
+  border-radius: 5px 5px 0px 0px;
+  background-color: #dbdbdb;
+  padding-bottom: 0.5em;
+  color: black;
+}
+
+main {
+  width: 70%;
+  float: left;
+  margin-left: 0.5em;
+  margin-bottom: 2em;
+}
+
+main img {
+  float: right;
+  width: 100%;
+}
+
+footer hr {
+  border: 0.5px solid;
+  margin-top: 0em;
+  color: black;
+  width: 100%;
+}
+
+footer .novidades {
+  background-color: #f4b5b5;
+  float: left;
+  width: 440px;
+  padding-top: 1em;
+  padding: 0.5em;
+}
+
+footer .vendidos {
+  background-color: #b5c1f4;
+  float: left;
+  width: 440px;
+  margin-left: 18px;
+  padding-top: 1em;
+  padding: 0.5em;
+}
+
+footer .item {
+  float: left;
+  margin-left: 9px;
+  margin-bottom: 1em;
+  width: 135px;
+  text-align: center;
+  background-color: #c9c9c9;
+}
+
+footer .item img {
+  width: 135px;
+  height: 135px;
+}
+
+.menu-departamentos li{
+  background-color: white;
+  width: auto;
+  margin-bottom: 1px;
+  padding: 5px 10px;
+}
+
+.menu-departamentos ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-departamentos a{
+  color: black;
+  text-decoration: none;
+}
+
+.menu-departamentos li ul{
+  display: none;
+}
+
+.menu-departamentos li:hover ul{
+  display: block;
+}
+
+.menu-departamentos li li a:before {
+ content: '- ';
+ padding-right: 3px;
+}
+
+.menu-departamentos ul ul li{
+  background-color: #dcdcdc;
+}

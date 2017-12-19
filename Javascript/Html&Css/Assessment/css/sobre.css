@@ -1,0 +1,43 @@
+.content {
+  padding: 0px 40px;
+}
+
+.content .imagem {
+  background-color: #f0ede9;
+  padding: 0.5em;
+}
+
+.center {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+
+.right {
+  float: right;
+  display: block;
+}
+
+.content .imagem img {
+  padding: 1em;
+  display: block;
+  margin: 0 auto;
+}
+
+.content .imagem .legenda {
+  text-align: center;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
+ul{
+  margin: 10px;
+  padding: 10px;
+}
+li{
+  padding-top: 8px;
+}
+.title h2{
+  margin-bottom: 2px;
+  font-size: 1.2em;
+}
