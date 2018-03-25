@@ -12,49 +12,29 @@ import { Materia } from '../../../domain/entities/materia';
 })
 export class UsuarioperfilComponent {
 
-  public usuario: Usuario = new Usuario();
   public materias: Materia[];
+  public institucionais: Materia[];
 
   constructor(public apiinfnet: ApiInfnetService, private router: Router) {
-    this.validateToken();
-    this.LoadProfile();
+    this.ValidateToken();
   }
 
-  public Materias() {
-    if (this.materias != undefined) {
-      return this.materias.filter(p => p.category != 16);
-    }
-
-  }
-
-  public CentralAluno() {
-    if (this.materias != undefined) {
-      return this.materias.filter(p => p.category == 16);
-    }
-  }
-
-  private validateToken() {
+  private ValidateToken() {
     if (!localStorage.getItem('token')) {
       this.router.navigate(['/login']);
+    }else{
+      var usuario = JSON.parse(localStorage.getItem('usuario')) as Usuario;
+      this.GetMaterias(usuario.id);
     }
   }
 
-  private LoadProfile() {
-    this.apiinfnet.GetDataMoodle(localStorage.getItem('token')).subscribe(retorno => {
-      this.usuario.id = retorno['userid'];
-      this.usuario.pictureUrl = retorno['userpictureurl'];
-      this.usuario.fullname = retorno['fullname'];
-      this.getMateria();
-    });
-  }
-
-  private getMateria() {
-    this.apiinfnet.GetMaterias(localStorage.getItem('token'), this.usuario).subscribe(retorno => this.materias = retorno);
-  }
-
-  deslogar() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+  private GetMaterias(userId: number) {
+    if(localStorage.getItem('token')){
+      this.apiinfnet.GetMaterias(localStorage.getItem('token'), userId).subscribe(retorno => {
+        this.institucionais = retorno.filter(p => p.category == 16 || p.category == 55 || p.category == 56);
+        this.materias = retorno.filter(p => p.category != 16 && p.category != 55 && p.category != 56);
+      });
+    }
   }
 
 }
