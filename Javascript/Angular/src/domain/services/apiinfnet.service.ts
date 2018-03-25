@@ -30,13 +30,31 @@ export class ApiInfnetService {
         return this.http.get(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_webservice_get_site_info").map(p => p.json());
     }
 
-    GetMaterias(token: string, usuario : Usuario) : Observable<Materia[]>{
-        console.log(usuario.id);
-        console.log(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_enrol_get_users_courses&userid=" + usuario.id);
-        return this.http.get(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_enrol_get_users_courses&userid=" + usuario.id).map(p => p.json() as Materia[]);
+    GetMaterias(token: string, usuarioId : number) : Observable<Materia[]>{
+        return this.http.get(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_enrol_get_users_courses&userid=" + usuarioId).map(p => p.json() as Materia[]);
     }
 
-    GetMateriasDetalhe(token: string, usuario : Usuario) : Observable<string>{
-        return this.http.get(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_enrol_get_users_courses&userid=" + usuario.id).map(p => p.json());
+    GetCompotencias(token: string, materiaId: string){
+        var formData = new FormData();
+        formData.append("moodlewssettingfilter", "true");
+        formData.append("moodlewssettingfileurl", "true");
+        formData.append("wsfunction", "tool_lp_data_for_course_competencies_page");
+        formData.append("wstoken", token);
+        formData.append("courseid", materiaId);
+
+        return this.http.post(SERVER_BASE_URL.base + "webservice/rest/server.php?moodlewsrestformat=json", formData).map(p => p.json()['competencies']);
+    }
+
+    GetNotaCompetencia(token, materiaId, competenciaId, userId){
+        var formData = new FormData();
+        formData.append("moodlewssettingfilter", "true");
+        formData.append("moodlewssettingfileurl", "true");
+        formData.append("wsfunction", "tool_lp_data_for_user_competency_summary_in_course");
+        formData.append("wstoken", token);
+        formData.append("courseid", materiaId);
+        formData.append("competencyid", competenciaId);
+        formData.append("userid", userId);
+
+        return this.http.post(SERVER_BASE_URL.base + "webservice/rest/server.php?moodlewsrestformat=json", formData).map(p => p.json()['usercompetencysummary']['usercompetencycourse']['gradename']);
     }
 }
