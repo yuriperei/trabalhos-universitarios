@@ -1,3 +1,4 @@
+import { Materia } from './../entities/materia';
 import { SERVER_BASE_URL } from './../utilities/constants';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs';
@@ -16,16 +17,26 @@ export class ApiInfnetService {
         this.headers.append('Content-Type', 'application/json');
     }
 
-    token(usuario : Usuario) : Observable<string> {
+    GetToken(usuario : Usuario) : Observable<string> {
         var formData = new FormData();
         formData.append("username", usuario.username);
         formData.append("password", usuario.password);
         formData.append("service", "moodle_mobile_app");
 
-        // Object.keys(usuario).forEach(key => {
-        //     formData.append(key, usuario[key]);
-        // });
-
         return this.http.post(SERVER_BASE_URL.base + "login/token.php", formData).map(p => p.json());
+    }
+
+    GetDataMoodle(token: string) : Observable<string>{
+        return this.http.get(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_webservice_get_site_info").map(p => p.json());
+    }
+
+    GetMaterias(token: string, usuario : Usuario) : Observable<Materia[]>{
+        console.log(usuario.id);
+        console.log(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_enrol_get_users_courses&userid=" + usuario.id);
+        return this.http.get(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_enrol_get_users_courses&userid=" + usuario.id).map(p => p.json() as Materia[]);
+    }
+
+    GetMateriasDetalhe(token: string, usuario : Usuario) : Observable<string>{
+        return this.http.get(SERVER_BASE_URL.base + "webservice/rest/server.php?wstoken=" + token + "&moodlewsrestformat=json&wsfunction=core_enrol_get_users_courses&userid=" + usuario.id).map(p => p.json());
     }
 }
