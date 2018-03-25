@@ -1,3 +1,7 @@
 export class Usuario{
-    constructor(public username: string, public password: string, public token: string = ""){};
+    public username: string;
+    public password: string;
+    public id: number;
+    public fullname: string; 
+    public pictureUrl: string;
 }
