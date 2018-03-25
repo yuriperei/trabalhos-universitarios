@@ -43,7 +43,16 @@ export class UsuariologinComponent {
       let token = retorno['token'];
       if(token){
         localStorage.setItem('token', token);
-        this.router.navigate(['/perfil']);
+
+        this.apiinfnet.GetDataMoodle(localStorage.getItem('token')).subscribe(retorno => {
+          this.usuario = new Usuario();
+          this.usuario.id = retorno['userid'];
+          this.usuario.pictureUrl = retorno['userpictureurl'];
+          this.usuario.fullname = retorno['fullname'];
+          
+          localStorage.setItem('usuario', JSON.stringify(this.usuario));
+          this.router.navigate(['/perfil']);
+        });
       }else{
         this.alert = new AlertMessage("Usuário/senha inválido.", "alert-danger");
       }

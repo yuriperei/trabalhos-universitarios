@@ -7,7 +7,7 @@
 
         <div class="form-label-group">
             <label for="inputEmail">E-mail</label>
-            <input [(ngModel)]="usuario.username" formControlName="username" type="email" class="form-control" placeholder="Informe o seu E-mail" autofocus>
+            <input [(ngModel)]="usuario.username" formControlName="username" type="email" class="form-control" placeholder="Informe o seu E-mail" autocomplete="email" autofocus>
             <div *ngIf="meuForm.controls.username.invalid">
                 <small *ngIf="meuForm.controls.username.errors.required" class="text-muted">- Usuário obrigatório</small>
                 <small *ngIf="meuForm.controls.username.errors.minlength" class="text-muted">- Usuário deve ter no mín. 4 carecteres</small>
@@ -16,7 +16,7 @@
 
         <div class="form-label-group">
             <label for="inputPassword">Senha</label>
-            <input [(ngModel)]="usuario.password" formControlName="password" type="password" class="form-control" placeholder="Informe a sua Senha" required>
+            <input [(ngModel)]="usuario.password" formControlName="password" type="password" class="form-control" placeholder="Informe a sua Senha" autocomplete="current-password">
             <div *ngIf="meuForm.controls.password.invalid">
                 <small *ngIf="meuForm.controls.password.errors.required" class="text-muted">- Senha obrigatória</small>
                 <small *ngIf="meuForm.controls.password.errors.minlength" class="text-muted">- Senha deve ter no mín. 4 carecteres</small>
