@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsuarioperfilComponent } from './perfil/usuarioperfil.component';
 import { UsuariologinComponent } from './login/usuariologin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule, ReactiveFormsModule,
+    HttpModule
   ],
   declarations: [
     UsuariologinComponent,

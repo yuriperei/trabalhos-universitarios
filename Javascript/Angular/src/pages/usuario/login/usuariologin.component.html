@@ -1,3 +1,31 @@
-<p>
-  usuariologin works!
-</p>
+<div class="container">
+    <form [formGroup]="meuForm" class="form-signin" (submit)="efetuarLogin($event)">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="https://lms.infnet.edu.br/moodle/theme/image.php/frankenstein/theme/1521658668/logo_infnet_red" alt="" width="260" height="80">
+            <h1 class="h3 mb-3 font-weight-normal">Infnet Moodle</h1>
+        </div>
+
+        <div class="form-label-group">
+            <label for="inputEmail">E-mail</label>
+            <input [(ngModel)]="usuario.username" formControlName="username" type="email" class="form-control" placeholder="Informe o seu E-mail" autofocus>
+            <div *ngIf="meuForm.controls.username.invalid">
+                <small *ngIf="meuForm.controls.username.errors.required" class="text-muted">- Usuário obrigatório</small>
+                <small *ngIf="meuForm.controls.username.errors.minlength" class="text-muted">- Usuário deve ter no mín. 4 carecteres</small>
+            </div>
+        </div>
+
+        <div class="form-label-group">
+            <label for="inputPassword">Senha</label>
+            <input [(ngModel)]="usuario.password" formControlName="password" type="password" class="form-control" placeholder="Informe a sua Senha" required>
+            <div *ngIf="meuForm.controls.password.invalid">
+                <small *ngIf="meuForm.controls.password.errors.required" class="text-muted">- Senha obrigatória</small>
+                <small *ngIf="meuForm.controls.password.errors.minlength" class="text-muted">- Senha deve ter no mín. 4 carecteres</small>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="meuForm.invalid">Entrar</button>
+        <div *ngIf="alert" [ngClass]="alert.type" class="alert" style="margin-top: 10px;" role="alert">
+            {{alert.message}}
+        </div>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+    </form>
+</div>
